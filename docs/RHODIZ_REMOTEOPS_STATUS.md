@@ -1,3 +1,29 @@
+# Continuidad vigente — 2026-09-19 — revalidación RDC bloqueada
+
+Proyecto: **RHODIZ ChatGPT Harness**. Componente: **RHODIZ RemoteOps MCP**.
+Este bloque prevalece sobre el snapshot histórico conservado debajo. Es **documentación**, no código, release, certificación ni deployment.
+
+## Resultado de la reanudación
+
+- Producto: **BLOCKED_INSTALLER_REVIEW**. INSTALL-001..005 continúan abiertos.
+- Bloqueo inmediato de esta reanudación: **BLOCKED_RDC_SECURITY_CONTROL**. RDC enumeró relay en línea y abrió un proceso; el control de seguridad bloqueó la llamada de comprobación de identidad sin devolver sus resultados. El proceso propio se cerró y su salida 0 fue confirmada.
+- **BLOCKED_BUILD_IDENTITY** sigue pendiente del handoff anterior, pero el UID y las capacidades de esta nueva sesión **no fueron revalidados**. No atribuirle automáticamente el estado root/CAP_SETUID histórico ni afirmar indisponibilidad total de RDC.
+- No se reintentó la operación denegada por otra herramienta, shell, credencial o transición de identidad. Tampoco se reintentó la escritura RDC denegada al cerrar la sesión anterior.
+- No se ejecutaron correcciones, builds, pruebas del producto, instaladores, cambios de servicios o WIP, ni SSH/túnel/E2E. El inventario y los digests anteriores siguen siendo evidencia histórica, no un preflight actual.
+- La reanudación de memoria volvió a fallar por falta de identidad de proyecto. Se recuperó únicamente el registro legado expresamente autorizado; no hay binding reparado ni replay completo.
+- La API GitHub confirmó `main` en `d52008a75aad68d957047935e1a252755aac1cc1`, la rama documental en `34738c8f5fa3124adcf63b6bfca042e5a9dda57d` antes de esta actualización y ausencia de la rama de producto en esa consulta. Esta actualización solo modifica este documento en la rama documental; su commit y lectura posterior se registran en el handoff privado.
+- Se recuperó y verificó la integridad del paquete privado de evidencia previo. Esta comprobación documental se hizo en el contenedor de conversación; no se trasladaron a él el desarrollo, los builds ni las pruebas del producto.
+
+## Siguiente condición necesaria
+
+Disponer de una ejecución RDC autorizada en relay que permita completar el preflight y trabajar como usuario de build no privilegiado, **sin eludir el control que bloqueó la llamada**. Renovar después identidad, acceso Git/Docker y cobertura de preservación; corregir/probar INSTALL-001..005; generar nuevos artefactos y pins revisados; certificar íntegramente y publicar el SHA de producto verificado antes de staging/rollback y SSH/agente/túnel/aprobación E2E.
+
+Mantener **ask-all**, **TTL cero**, preservación de servicios/repositorios/WIP y CI únicamente como certificación. No ejecutar instaladores originales ni transferencias parciales. No fusionar esta rama documental con la fuente certificada automáticamente. No presentar la sincronización documental como avance del deployment.
+
+---
+
+## Snapshot documental anterior — conservado íntegro, no es estado vivo actual
+
 # RHODIZ RemoteOps MCP — estado y continuidad
 
 Proyecto: **RHODIZ ChatGPT Harness**. Componente: **RHODIZ RemoteOps MCP**.
